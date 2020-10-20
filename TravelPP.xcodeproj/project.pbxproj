@@ -17,6 +17,7 @@
 		55870D4B23849738004465FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55870D4A23849738004465FA /* Assets.xcassets */; };
 		55870D4E23849738004465FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55870D4C23849738004465FA /* LaunchScreen.storyboard */; };
 		55870D5923849738004465FA /* TravelPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55870D5823849738004465FA /* TravelPPTests.swift */; };
+		55E141BA253F9039001F6BF5 /* BeforeTravelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E141B9253F9039001F6BF5 /* BeforeTravelVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		55870D5423849738004465FA /* TravelPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55870D5823849738004465FA /* TravelPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPPTests.swift; sourceTree = "<group>"; };
 		55870D5A23849738004465FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55E141B9253F9039001F6BF5 /* BeforeTravelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTravelVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 		5502FD1623A0AB390073087F /* TravelVCs */ = {
 			isa = PBXGroup;
 			children = (
+				55E141B9253F9039001F6BF5 /* BeforeTravelVC.swift */,
 				5502FD1C23A0B52C0073087F /* TravelDayVC.swift */,
 			);
 			path = TravelVCs;
@@ -245,6 +248,7 @@
 				55870D4223849733004465FA /* AppDelegate.swift in Sources */,
 				5502FD1923A0ADC80073087F /* LoginVC.swift in Sources */,
 				5502FD1D23A0B52C0073087F /* TravelDayVC.swift in Sources */,
+				55E141BA253F9039001F6BF5 /* BeforeTravelVC.swift in Sources */,
 				5502FD1B23A0AFC50073087F /* CreateAccountVC.swift in Sources */,
 				55870D4423849733004465FA /* SceneDelegate.swift in Sources */,
 			);
