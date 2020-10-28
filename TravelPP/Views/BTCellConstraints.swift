@@ -8,23 +8,25 @@
 
 import UIKit
 
-extension BeforeTravelCell {
+extension BeforeTravelCell: UICollectionViewDelegateFlowLayout {
     
-    func addViews(){
+    func addSubviews(){
         self.addSubview(upcomingTripsLabel)
     }
     
     func setUpUpcomingTripsLabel(){
         upcomingTripsLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-        upcomingTripsLabel.topAnchor.constraint(equalToSystemSpacingBelow: self.topAnchor, multiplier: 0.5),
             upcomingTripsLabel.leftAnchor.constraint(equalTo: self.leftAnchor),
             upcomingTripsLabel.rightAnchor.constraint(equalTo: self.rightAnchor),
-            upcomingTripsLabel.heightAnchor.constraint(equalTo: self.heightAnchor, multiplier: 0.2)
+            upcomingTripsLabel.heightAnchor.constraint(equalToConstant: 50)
             
         ])
     
         
+    }
+     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: UIScreen.main.bounds.size.width, height: 200)
     }
     
     

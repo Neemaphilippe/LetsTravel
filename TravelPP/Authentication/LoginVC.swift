@@ -49,7 +49,7 @@ class LoginVC: UIViewController {
         button.setTitle("Sign In", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
-        button.backgroundColor = #colorLiteral(red: 0.2918118834, green: 0.7149427533, blue: 0.7101073861, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         button.layer.cornerRadius = 5
         button.isEnabled = false
         return button
