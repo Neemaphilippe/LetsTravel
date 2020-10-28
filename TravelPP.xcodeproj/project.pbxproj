@@ -22,6 +22,7 @@
 		55E141BD253FA584001F6BF5 /* BeforeTravelConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E141BC253FA584001F6BF5 /* BeforeTravelConstraints.swift */; };
 		55E141BF253FA9B0001F6BF5 /* BeforeTravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E141BE253FA9B0001F6BF5 /* BeforeTravelCell.swift */; };
 		55EF7045254A247F00895793 /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF7044254A247F00895793 /* TabVC.swift */; };
+		55EF7047254A3A2C00895793 /* PostTravelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF7046254A3A2C00895793 /* PostTravelVC.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -54,6 +55,7 @@
 		55E141BC253FA584001F6BF5 /* BeforeTravelConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTravelConstraints.swift; sourceTree = "<group>"; };
 		55E141BE253FA9B0001F6BF5 /* BeforeTravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTravelCell.swift; sourceTree = "<group>"; };
 		55EF7044254A247F00895793 /* TabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVC.swift; sourceTree = "<group>"; };
+		55EF7046254A3A2C00895793 /* PostTravelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTravelVC.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -88,6 +90,7 @@
 			children = (
 				55E141B9253F9039001F6BF5 /* BeforeTravelVC.swift */,
 				5502FD1C23A0B52C0073087F /* TravelDayVC.swift */,
+				55EF7046254A3A2C00895793 /* PostTravelVC.swift */,
 			);
 			path = TravelVCs;
 			sourceTree = "<group>";
@@ -266,6 +269,7 @@
 			files = (
 				55BDB2342540F08F00CB8F9A /* BTCellConstraints.swift in Sources */,
 				55870D4623849733004465FA /* ViewController.swift in Sources */,
+				55EF7047254A3A2C00895793 /* PostTravelVC.swift in Sources */,
 				55EF7045254A247F00895793 /* TabVC.swift in Sources */,
 				55E141BD253FA584001F6BF5 /* BeforeTravelConstraints.swift in Sources */,
 				55870D4223849733004465FA /* AppDelegate.swift in Sources */,

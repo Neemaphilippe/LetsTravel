@@ -16,6 +16,8 @@ class TabVC: UITabBarController {
     
     let travelDayVC = TravelDayVC()
     
+    let postTravelVC = PostTravelVC()
+    
     
     
     
@@ -33,7 +35,8 @@ class TabVC: UITabBarController {
    private func setUpTabBarController() {
     beforeTravelVC.tabBarItem = UITabBarItem(title: "Before", image: UIImage(systemName: "calendar.circle"), tag: 0)
     travelDayVC.tabBarItem = UITabBarItem(title: "Travel", image: UIImage(systemName: "airplane"), tag: 1)
-    self.viewControllers = [beforeTravelVC, travelDayVC]
+    postTravelVC.tabBarItem = UITabBarItem(title: "Home", image: UIImage(systemName: "house.fill"), tag: 2)
+    self.viewControllers = [beforeTravelVC, travelDayVC, postTravelVC]
    }
 
     private func setTabBarStyle(){
