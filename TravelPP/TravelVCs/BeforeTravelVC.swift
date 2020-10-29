@@ -10,9 +10,18 @@ import UIKit
 
 class BeforeTravelVC: UIViewController {
     
+    let cellReuseIdentifier = "beforeTravelCell"
+    
+    var locations = ["Tokyo", "Paris", "New York", "Colorado"]
+    
     lazy var beforeTravelCV: UICollectionView = {
-        let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: UICollectionViewFlowLayout())
-        collectionView.register(BeforeTravelCell.self, forCellWithReuseIdentifier: "beforeTravelCell")
+        let layout = UICollectionViewFlowLayout()
+        layout.minimumLineSpacing = 0
+        layout.minimumInteritemSpacing = 0
+        layout.itemSize = .init(width: self.view.frame.width, height: 250)
+        layout.scrollDirection = .vertical 
+        let collectionView: UICollectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.register(BeforeTravelCell.self, forCellWithReuseIdentifier: cellReuseIdentifier)
         collectionView.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         collectionView.delegate = self
         collectionView.dataSource = self
@@ -44,13 +53,15 @@ class BeforeTravelVC: UIViewController {
 
 extension BeforeTravelVC: UICollectionViewDelegate, UICollectionViewDataSource{
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return 1
+        return locations.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = beforeTravelCV.dequeueReusableCell(withReuseIdentifier: "beforeTravelCell", for: indexPath) as! BeforeTravelCell
-        cell.upcomingTripsLabel.text = "Upcoming Trips:"
-        return cell 
+        guard let cell = beforeTravelCV.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? BeforeTravelCell else {return UICollectionViewCell()}
+        let singleLocation = locations[indexPath.row]
+        cell.upcomingTripsLabel.text = "Upcoming Trip: " + singleLocation
+        cell.locationImageView.image = UIImage(named: singleLocation)
+        return cell
 
     }
     

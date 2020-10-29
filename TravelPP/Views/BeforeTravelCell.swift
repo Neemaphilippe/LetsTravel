@@ -20,17 +20,26 @@ class BeforeTravelCell: UICollectionViewCell {
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         label.textColor = #colorLiteral(red: 0, green: 0, blue: 0, alpha: 1)
-        label.backgroundColor =  #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
+        label.backgroundColor = .red
         return label
         
+    }()
+    
+    lazy var locationImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
+        imageView.backgroundColor = .purple
+        return imageView
     }()
     
     // MARK: - Initializers
        override init(frame: CGRect) {
            super.init(frame: frame)
         addSubviews()
-        setUpUpcomingTripsLabel()
-           
+        setUpUpcomingTripsLabelConstraints()
+        setUpImageViewConstraints()
+        self.backgroundColor = .green 
        }
     
 
