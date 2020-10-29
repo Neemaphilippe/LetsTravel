@@ -17,7 +17,7 @@ class TravelDayVC: UIViewController {
         label.numberOfLines = 0
         label.text = "Used airport parking? Enter information below."
         label.font = UIFont(name: "Times New Roman", size: 18)
-        label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
+        label.textColor = .black
         label.backgroundColor =  #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         label.textAlignment = .left
         return label
@@ -33,6 +33,8 @@ class TravelDayVC: UIViewController {
         tf.autocorrectionType = .no
         return tf
     }()
+    
+  
     
     lazy var boardingPassImage : UIImageView = {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
@@ -51,21 +53,33 @@ class TravelDayVC: UIViewController {
     lazy var addBoardingPassButton : UIButton = {
         let button = UIButton()
         button.setTitle("Add Pass", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
-        button.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9724547267, green: 0.9954997897, blue: 1, alpha: 1)
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(boardingPassButtonPressed), for: .touchUpInside)
         button.isEnabled = true
         return button
     }()
     
+    lazy var addReminderButton : UIButton = {
+           let button = UIButton()
+           button.setTitle("Add Reminder", for: .normal)
+           button.setTitleColor(.black, for: .normal)
+           button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
+           button.backgroundColor = #colorLiteral(red: 0.9724547267, green: 0.9954997897, blue: 1, alpha: 1)
+           button.layer.cornerRadius = 5
+           button.addTarget(self, action: #selector(newReminderButtonPressed), for: .touchUpInside)
+           button.isEnabled = true
+           return button
+       }()
+    
     lazy var thingsToDoButton : UIButton = {
         let button = UIButton()
         button.setTitle("Check out things to do in this city!", for: .normal)
-        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
-        button.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
         button.layer.cornerRadius = 5
         button.isEnabled = false
         return button
@@ -79,6 +93,7 @@ class TravelDayVC: UIViewController {
         view.addSubview(parkingInfoTextField)
         view.addSubview(boardingPassImage)
         view.addSubview(addBoardingPassButton)
+        view.addSubview(addReminderButton)
         view.addSubview(thingsToDoButton)
     }
     
@@ -99,6 +114,17 @@ class TravelDayVC: UIViewController {
             parkingInfoTextField.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30)])
     }
     
+    private func setUpNewReminderButton(){
+        addReminderButton.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            
+        addReminderButton.heightAnchor.constraint(equalToConstant: 20),
+        addReminderButton.widthAnchor.constraint(equalToConstant: 100),
+        addReminderButton.bottomAnchor.constraint(equalTo: parkingInfoTextField.bottomAnchor, constant: 15),
+        addReminderButton.trailingAnchor.constraint(equalTo: parkingInfoTextField.trailingAnchor)
+        
+        ])
+    }
     
     private func setUpBoardingPassImage(){
         boardingPassImage.translatesAutoresizingMaskIntoConstraints = false
@@ -117,7 +143,7 @@ class TravelDayVC: UIViewController {
     private func setUpAddBoardingPassButton(){
         addBoardingPassButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            addBoardingPassButton.heightAnchor.constraint(equalToConstant: 10),
+            addBoardingPassButton.heightAnchor.constraint(equalToConstant: 20),
             addBoardingPassButton.widthAnchor.constraint(equalToConstant: 100),
             addBoardingPassButton.bottomAnchor.constraint(equalTo: boardingPassImage.bottomAnchor, constant: 15),
             addBoardingPassButton.trailingAnchor.constraint(equalTo: boardingPassImage.trailingAnchor)
@@ -145,6 +171,7 @@ class TravelDayVC: UIViewController {
         setUpBoardingPassImage()
         setUpAddBoardingPassButton()
         setUpThingsToDoButton()
+        setUpNewReminderButton()
     }
     
     
@@ -156,6 +183,10 @@ class TravelDayVC: UIViewController {
         imagePicker.sourceType = .photoLibrary
         imagePicker.delegate = self
         present(imagePicker, animated: true, completion: nil)
+    }
+    
+    @objc func newReminderButtonPressed() {
+        
     }
     
     
@@ -170,7 +201,7 @@ class TravelDayVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.8503543735, green: 0.9234483838, blue: 0.9440550804, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         addViews()
         setUpViews()
     }
