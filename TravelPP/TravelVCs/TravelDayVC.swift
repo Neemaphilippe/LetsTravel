@@ -18,7 +18,7 @@ class TravelDayVC: UIViewController {
         label.text = "Used airport parking? Enter information below."
         label.font = UIFont(name: "Times New Roman", size: 18)
         label.textColor = #colorLiteral(red: 1, green: 1, blue: 1, alpha: 1)
-        label.backgroundColor =  #colorLiteral(red: 0.291303119, green: 0.7187682314, blue: 0.7105970381, alpha: 1)
+        label.backgroundColor =  #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         label.textAlignment = .left
         return label
     }()
@@ -38,7 +38,7 @@ class TravelDayVC: UIViewController {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
         let image = UIImageView()
         image.contentMode = .scaleAspectFit
-        image.backgroundColor = #colorLiteral(red: 0.2918118834, green: 0.7149427533, blue: 0.7101073861, alpha: 1)
+        image.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         image.image = UIImage(named: "boardingPass")
         image.frame = UIScreen.main.bounds
         image.contentMode = .scaleAspectFit
@@ -53,7 +53,7 @@ class TravelDayVC: UIViewController {
         button.setTitle("Add Pass", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
-        button.backgroundColor = #colorLiteral(red: 0.2918118834, green: 0.7149427533, blue: 0.7101073861, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(boardingPassButtonPressed), for: .touchUpInside)
         button.isEnabled = true
@@ -65,7 +65,7 @@ class TravelDayVC: UIViewController {
         button.setTitle("Check out things to do in this city!", for: .normal)
         button.setTitleColor(.white, for: .normal)
         button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
-        button.backgroundColor = #colorLiteral(red: 0.2918118834, green: 0.7149427533, blue: 0.7101073861, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         button.layer.cornerRadius = 5
         button.isEnabled = false
         return button
@@ -104,7 +104,7 @@ class TravelDayVC: UIViewController {
         boardingPassImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             boardingPassImage.topAnchor.constraint(equalTo: parkingInfoTextField.bottomAnchor, constant: 100),
-            boardingPassImage.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.4),
+            boardingPassImage.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5),
             boardingPassImage.widthAnchor.constraint(equalTo: boardingPassImage.heightAnchor, multiplier: 0.75),
             boardingPassImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
             
@@ -128,7 +128,7 @@ class TravelDayVC: UIViewController {
     private func setUpThingsToDoButton(){
         thingsToDoButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            thingsToDoButton.topAnchor.constraint(equalTo: addBoardingPassButton.bottomAnchor, constant: 100),
+            thingsToDoButton.topAnchor.constraint(equalTo: addBoardingPassButton.bottomAnchor, constant: 50),
             thingsToDoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -85),
             thingsToDoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 85),
             thingsToDoButton.heightAnchor.constraint(equalToConstant: 30)
@@ -170,7 +170,7 @@ class TravelDayVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = #colorLiteral(red: 0.4419714212, green: 0.5883228183, blue: 0.8935868144, alpha: 1)
+        view.backgroundColor = #colorLiteral(red: 0.8503543735, green: 0.9234483838, blue: 0.9440550804, alpha: 1)
         addViews()
         setUpViews()
     }
