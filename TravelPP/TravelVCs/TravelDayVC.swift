@@ -34,7 +34,16 @@ class TravelDayVC: UIViewController {
         return tf
     }()
     
-  
+    lazy var addBoardingPassLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.text = "Upload Boarding Pass:"
+        label.font = UIFont(name: "Times New Roman", size: 18)
+        label.textColor = .black
+        label.backgroundColor =  #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
+        label.textAlignment = .left
+        return label
+    }()
     
     lazy var boardingPassImage : UIImageView = {
         let tap = UITapGestureRecognizer(target: self, action: #selector(dismissFullscreenImage))
@@ -95,6 +104,7 @@ class TravelDayVC: UIViewController {
         view.addSubview(addBoardingPassButton)
         view.addSubview(addReminderButton)
         view.addSubview(thingsToDoButton)
+        view.addSubview(addBoardingPassLabel)
     }
     
     
@@ -110,8 +120,8 @@ class TravelDayVC: UIViewController {
         parkingInfoTextField.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             parkingInfoTextField.topAnchor.constraint(equalTo: parkingLabel.bottomAnchor, constant: 10),
-            parkingInfoTextField.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
-            parkingInfoTextField.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30)])
+            parkingInfoTextField.leadingAnchor.constraint(equalTo: parkingLabel.leadingAnchor),
+            parkingInfoTextField.trailingAnchor.constraint(equalTo: parkingLabel.trailingAnchor)])
     }
     
     private func setUpNewReminderButton(){
@@ -126,10 +136,20 @@ class TravelDayVC: UIViewController {
         ])
     }
     
+    private func setUpBoardingPassLabel(){
+        addBoardingPassLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            addBoardingPassLabel.topAnchor.constraint(equalTo: parkingInfoTextField.bottomAnchor, constant: 50),
+            addBoardingPassLabel.leadingAnchor.constraint(equalTo: parkingLabel.leadingAnchor),
+//            addBoardingPassLabel.heightAnchor.constraint(equalToConstant: 50)
+        
+        ])
+    }
+    
     private func setUpBoardingPassImage(){
         boardingPassImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            boardingPassImage.topAnchor.constraint(equalTo: parkingInfoTextField.bottomAnchor, constant: 100),
+            boardingPassImage.topAnchor.constraint(equalTo: addBoardingPassLabel.bottomAnchor, constant: 10),
             boardingPassImage.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5),
             boardingPassImage.widthAnchor.constraint(equalTo: boardingPassImage.heightAnchor, multiplier: 0.75),
             boardingPassImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
@@ -172,6 +192,7 @@ class TravelDayVC: UIViewController {
         setUpAddBoardingPassButton()
         setUpThingsToDoButton()
         setUpNewReminderButton()
+        setUpBoardingPassLabel()
     }
     
     
