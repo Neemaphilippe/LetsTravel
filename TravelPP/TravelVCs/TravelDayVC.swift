@@ -129,8 +129,9 @@ class TravelDayVC: UIViewController {
         NSLayoutConstraint.activate([
             
         addReminderButton.heightAnchor.constraint(equalToConstant: 20),
-        addReminderButton.widthAnchor.constraint(equalToConstant: 100),
-        addReminderButton.bottomAnchor.constraint(equalTo: parkingInfoTextField.bottomAnchor, constant: 15),
+            addReminderButton.topAnchor.constraint(equalTo: parkingInfoTextField.bottomAnchor, constant: 10),
+            addReminderButton.widthAnchor.constraint(equalToConstant: 100),
+//        addReminderButton.bottomAnchor.constraint(equalTo: parkingInfoTextField.bottomAnchor, constant: 15),
         addReminderButton.trailingAnchor.constraint(equalTo: parkingInfoTextField.trailingAnchor)
         
         ])
@@ -149,7 +150,7 @@ class TravelDayVC: UIViewController {
     private func setUpBoardingPassImage(){
         boardingPassImage.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            boardingPassImage.topAnchor.constraint(equalTo: addBoardingPassLabel.bottomAnchor, constant: 10),
+            boardingPassImage.topAnchor.constraint(equalTo: addBoardingPassButton.bottomAnchor, constant: 10),
             boardingPassImage.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.5),
             boardingPassImage.widthAnchor.constraint(equalTo: boardingPassImage.heightAnchor, multiplier: 0.75),
             boardingPassImage.centerXAnchor.constraint(equalTo: view.safeAreaLayoutGuide.centerXAnchor)
@@ -165,8 +166,8 @@ class TravelDayVC: UIViewController {
         NSLayoutConstraint.activate([
             addBoardingPassButton.heightAnchor.constraint(equalToConstant: 20),
             addBoardingPassButton.widthAnchor.constraint(equalToConstant: 100),
-            addBoardingPassButton.bottomAnchor.constraint(equalTo: boardingPassImage.bottomAnchor, constant: 15),
-            addBoardingPassButton.trailingAnchor.constraint(equalTo: boardingPassImage.trailingAnchor)
+            addBoardingPassButton.topAnchor.constraint(equalTo: addBoardingPassLabel.bottomAnchor),
+            addBoardingPassButton.trailingAnchor.constraint(equalTo: addReminderButton.trailingAnchor)
             
         ])
     }
@@ -174,7 +175,7 @@ class TravelDayVC: UIViewController {
     private func setUpThingsToDoButton(){
         thingsToDoButton.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            thingsToDoButton.topAnchor.constraint(equalTo: addBoardingPassButton.bottomAnchor, constant: 50),
+            thingsToDoButton.topAnchor.constraint(equalTo: boardingPassImage.bottomAnchor, constant: 50),
             thingsToDoButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -85),
             thingsToDoButton.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 85),
             thingsToDoButton.heightAnchor.constraint(equalToConstant: 30)
