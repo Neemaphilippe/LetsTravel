@@ -12,13 +12,11 @@ class TabVC: UITabBarController {
     
     // MARK: UI Objects
     
-    let beforeTravelVC = BeforeTravelVC()
+    let beforeTravelVC = NavigationController(rootViewController: BeforeTravelVC())
     
-    let travelDayVC = TravelDayVC()
+    let travelDayVC = NavigationController(rootViewController: TravelDayVC())
     
-    let postTravelVC = PostTravelVC()
-    
-    
+    let postTravelVC = NavigationController(rootViewController: PostTravelVC())
     
     
     

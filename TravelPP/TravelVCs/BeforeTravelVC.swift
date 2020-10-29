@@ -25,6 +25,7 @@ class BeforeTravelVC: UIViewController {
     override func viewDidLoad(){
         addViews()
         setUpBeforeTravelCV()
+        setTitle()
         view.backgroundColor = .white
         
         
@@ -36,7 +37,9 @@ class BeforeTravelVC: UIViewController {
         view.addSubview(beforeTravelCV)
     }
    
-    
+    private func setTitle() {
+        self.navigationItem.title = NavBarTitle.before.rawValue
+    }
 }
 
 extension BeforeTravelVC: UICollectionViewDelegate, UICollectionViewDataSource{

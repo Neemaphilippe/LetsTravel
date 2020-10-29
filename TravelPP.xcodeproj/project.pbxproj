@@ -23,6 +23,8 @@
 		55E141BF253FA9B0001F6BF5 /* BeforeTravelCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E141BE253FA9B0001F6BF5 /* BeforeTravelCell.swift */; };
 		55EF7045254A247F00895793 /* TabVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF7044254A247F00895793 /* TabVC.swift */; };
 		55EF7047254A3A2C00895793 /* PostTravelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF7046254A3A2C00895793 /* PostTravelVC.swift */; };
+		55EF7049254A4EB800895793 /* Titles.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF7048254A4EB800895793 /* Titles.swift */; };
+		55EF704B254A509C00895793 /* NavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55EF704A254A509C00895793 /* NavigationController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -56,6 +58,8 @@
 		55E141BE253FA9B0001F6BF5 /* BeforeTravelCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTravelCell.swift; sourceTree = "<group>"; };
 		55EF7044254A247F00895793 /* TabVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabVC.swift; sourceTree = "<group>"; };
 		55EF7046254A3A2C00895793 /* PostTravelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PostTravelVC.swift; sourceTree = "<group>"; };
+		55EF7048254A4EB800895793 /* Titles.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Titles.swift; sourceTree = "<group>"; };
+		55EF704A254A509C00895793 /* NavigationController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,6 +85,7 @@
 			children = (
 				55E141BE253FA9B0001F6BF5 /* BeforeTravelCell.swift */,
 				55BDB2332540F08F00CB8F9A /* BTCellConstraints.swift */,
+				55EF7048254A4EB800895793 /* Titles.swift */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -162,6 +167,7 @@
 			isa = PBXGroup;
 			children = (
 				55EF7044254A247F00895793 /* TabVC.swift */,
+				55EF704A254A509C00895793 /* NavigationController.swift */,
 			);
 			path = TabBarVC;
 			sourceTree = "<group>";
@@ -269,8 +275,10 @@
 			files = (
 				55BDB2342540F08F00CB8F9A /* BTCellConstraints.swift in Sources */,
 				55870D4623849733004465FA /* ViewController.swift in Sources */,
+				55EF7049254A4EB800895793 /* Titles.swift in Sources */,
 				55EF7047254A3A2C00895793 /* PostTravelVC.swift in Sources */,
 				55EF7045254A247F00895793 /* TabVC.swift in Sources */,
+				55EF704B254A509C00895793 /* NavigationController.swift in Sources */,
 				55E141BD253FA584001F6BF5 /* BeforeTravelConstraints.swift in Sources */,
 				55870D4223849733004465FA /* AppDelegate.swift in Sources */,
 				5502FD1923A0ADC80073087F /* LoginVC.swift in Sources */,

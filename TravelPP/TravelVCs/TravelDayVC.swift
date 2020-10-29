@@ -219,13 +219,17 @@ class TravelDayVC: UIViewController {
     }
     
     
-    
+    private func setUpNavBar() {
+        self.navigationItem.title = NavBarTitle.travelDay.rawValue
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         addViews()
         setUpViews()
+        setUpNavBar()
     }
     
 }
