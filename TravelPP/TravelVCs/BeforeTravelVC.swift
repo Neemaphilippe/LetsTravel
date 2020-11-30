@@ -12,7 +12,12 @@ class BeforeTravelVC: UIViewController {
     
     let cellReuseIdentifier = "beforeTravelCell"
     
-    var locations = ["Tokyo", "Paris", "New York", "Colorado"]
+    var locations = [TravelInfo]() {
+        didSet {
+            beforeTravelCV.reloadData()
+        }
+    }
+    var countdowns = ["1 day", "32 days", "45 days", "90 days"]
     
     lazy var beforeTravelCV: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
@@ -31,12 +36,23 @@ class BeforeTravelVC: UIViewController {
     
     
     
+    fileprivate func fetchTravelInfoData() {
+        do {
+            let data = try JSONDecoder().decode([TravelInfo].self, from: traveljson)
+            locations = data
+        } catch {
+            print(error)
+        }
+    }
+    
     override func viewDidLoad(){
         addViews()
         setUpBeforeTravelCV()
         setTitle()
         view.backgroundColor = .white
         
+        
+        fetchTravelInfoData()
         
         
     }
@@ -58,9 +74,12 @@ extension BeforeTravelVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = beforeTravelCV.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? BeforeTravelCell else {return UICollectionViewCell()}
-        let singleLocation = locations[indexPath.row]
-        cell.upcomingTripsLabel.text = "Upcoming Trip: " + singleLocation
-        cell.locationImageView.image = UIImage(named: singleLocation)
+//        let singleLocation = locations[indexPath.row]
+//        let singleCountdown = countdowns[indexPath.row]
+        //put this into a struct
+//        cell.upcomingTripsLabel.text = "Upcoming Trip: " + singleLocation
+//        cell.locationImageView.image = UIImage(named: singleLocation)
+//        cell.countdownLabel.text = "Time left until trip: " + singleCountdown
         return cell
 
     }

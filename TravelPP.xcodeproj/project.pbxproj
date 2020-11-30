@@ -10,6 +10,7 @@
 		5502FD1923A0ADC80073087F /* LoginVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502FD1823A0ADC80073087F /* LoginVC.swift */; };
 		5502FD1B23A0AFC50073087F /* CreateAccountVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502FD1A23A0AFC50073087F /* CreateAccountVC.swift */; };
 		5502FD1D23A0B52C0073087F /* TravelDayVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5502FD1C23A0B52C0073087F /* TravelDayVC.swift */; };
+		557EC36B254B23D100AA70FB /* TravelInfoModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 557EC36A254B23D100AA70FB /* TravelInfoModel.swift */; };
 		55870D4223849733004465FA /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55870D4123849733004465FA /* AppDelegate.swift */; };
 		55870D4423849733004465FA /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55870D4323849733004465FA /* SceneDelegate.swift */; };
 		55870D4623849733004465FA /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55870D4523849733004465FA /* ViewController.swift */; };
@@ -41,6 +42,7 @@
 		5502FD1823A0ADC80073087F /* LoginVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginVC.swift; sourceTree = "<group>"; };
 		5502FD1A23A0AFC50073087F /* CreateAccountVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateAccountVC.swift; sourceTree = "<group>"; };
 		5502FD1C23A0B52C0073087F /* TravelDayVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelDayVC.swift; sourceTree = "<group>"; };
+		557EC36A254B23D100AA70FB /* TravelInfoModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelInfoModel.swift; sourceTree = "<group>"; };
 		55870D3E23849732004465FA /* TravelPP.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TravelPP.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		55870D4123849733004465FA /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		55870D4323849733004465FA /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,14 @@
 			path = Authentication;
 			sourceTree = "<group>";
 		};
+		557EC369254B1BD400AA70FB /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				557EC36A254B23D100AA70FB /* TravelInfoModel.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
 		55870D3523849732004465FA = {
 			isa = PBXGroup;
 			children = (
@@ -132,6 +142,7 @@
 			children = (
 				55870D4123849733004465FA /* AppDelegate.swift */,
 				55870D4323849733004465FA /* SceneDelegate.swift */,
+				557EC369254B1BD400AA70FB /* Model */,
 				5502FD1723A0AB590073087F /* Authentication */,
 				55EF7041254A240400895793 /* TabBarVC */,
 				5502FD1623A0AB390073087F /* TravelVCs */,
@@ -273,6 +284,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				557EC36B254B23D100AA70FB /* TravelInfoModel.swift in Sources */,
 				55BDB2342540F08F00CB8F9A /* BTCellConstraints.swift in Sources */,
 				55870D4623849733004465FA /* ViewController.swift in Sources */,
 				55EF7049254A4EB800895793 /* Titles.swift in Sources */,

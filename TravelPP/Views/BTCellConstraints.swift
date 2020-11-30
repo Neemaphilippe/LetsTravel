@@ -13,6 +13,8 @@ extension BeforeTravelCell: UICollectionViewDelegateFlowLayout {
      func addSubviews(){
         self.addSubview(upcomingTripsLabel)
         self.addSubview(locationImageView)
+        self.addSubview(countdownLabel)
+        
     }
     
      func setUpUpcomingTripsLabelConstraints(){
@@ -41,9 +43,18 @@ extension BeforeTravelCell: UICollectionViewDelegateFlowLayout {
         ])
         
     }
-//     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-//        return CGSize(width: UIScreen.main.bounds.size.width, height: 200)
-//    }
+    
+    func setUpCountdownLabelConstraints(){
+        countdownLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            countdownLabel.centerYAnchor.constraint(equalTo: self.locationImageView.centerYAnchor),
+            countdownLabel.heightAnchor.constraint(equalToConstant: 50),
+            countdownLabel.leadingAnchor.constraint(equalTo: self.locationImageView.trailingAnchor, constant: 5),
+            countdownLabel.trailingAnchor.constraint(equalTo: self.trailingAnchor, constant: -5)
+        ])
+    }
+
+
     
     
 }
