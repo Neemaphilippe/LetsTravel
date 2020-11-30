@@ -64,6 +64,7 @@ class BeforeTravelVC: UIViewController {
         setTitle()
         view.backgroundColor = .white
         fetchTravelInfoData()
+        self.navigationItem.rightBarButtonItem = addNewTripButton
     }
     
     @objc func addNewTripButtonPressed() {
