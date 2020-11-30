@@ -14,9 +14,7 @@ let traveljson = """
     "location": "New York",
 "departureDate": "10/20/10",
 "currentDate": "10/21/10"
-  },  {
-
-}
+  }
 ]
 """.data(using: .utf8)!
 

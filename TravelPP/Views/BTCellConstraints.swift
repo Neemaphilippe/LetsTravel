@@ -14,6 +14,7 @@ extension BeforeTravelCell: UICollectionViewDelegateFlowLayout {
         self.addSubview(upcomingTripsLabel)
         self.addSubview(locationImageView)
         self.addSubview(countdownLabel)
+        self.addSubview(addNewTripButton)
         
     }
     
