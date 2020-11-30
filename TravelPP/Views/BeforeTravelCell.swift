@@ -25,11 +25,6 @@ class BeforeTravelCell: UICollectionViewCell {
         
     }()
     
-    lazy var addNewTripButton: UIButton = {
-        let button = UIButton()
-        button.setTitle("", for: .normal)
-        return button
-    }()
     
     lazy var locationImageView: UIImageView = {
         let imageView = UIImageView()

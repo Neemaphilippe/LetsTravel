@@ -14,7 +14,6 @@ extension BeforeTravelCell: UICollectionViewDelegateFlowLayout {
         self.addSubview(upcomingTripsLabel)
         self.addSubview(locationImageView)
         self.addSubview(countdownLabel)
-        self.addSubview(addNewTripButton)
         
     }
     
@@ -44,6 +43,14 @@ extension BeforeTravelCell: UICollectionViewDelegateFlowLayout {
         ])
         
     }
+    
+//    func setUpAddNewTripButtonConstraints(){
+//        addNewTripButton.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            
+//        
+//        ])
+//    }
     
     func setUpCountdownLabelConstraints(){
         countdownLabel.translatesAutoresizingMaskIntoConstraints = false
