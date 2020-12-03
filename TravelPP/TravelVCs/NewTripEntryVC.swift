@@ -8,7 +8,7 @@
 
 import UIKit
 
-class NewTripEntry: UIView {
+class NewTripEntryVC: UIViewController {
     
     //MARK: UI Objects
     
@@ -55,7 +55,7 @@ class NewTripEntry: UIView {
     
     lazy var newDatePicker: UIDatePicker = {
         let date = UIDatePicker()
-        date.frame = CGRect(x: 10, y: 50, width: self.frame.width, height: 200)
+        date.frame = CGRect(x: 10, y: 50, width: self.view.frame.width, height: 200)
         date.timeZone = NSTimeZone.local
         date.backgroundColor = UIColor.black
         return date
@@ -76,21 +76,21 @@ class NewTripEntry: UIView {
     //MARK: Functions
     
     func addViews(){
-        self.addSubview(welcomeLabel)
-        self.addSubview(newlocationLabel)
-        self.addSubview(newLocationText)
-        self.addSubview(newDateLabel)
-        self.addSubview(newDatePicker)
-        self.addSubview(submitButton)
+        self.view.addSubview(welcomeLabel)
+        self.view.addSubview(newlocationLabel)
+        self.view.addSubview(newLocationText)
+        self.view.addSubview(newDateLabel)
+        self.view.addSubview(newDatePicker)
+        self.view.addSubview(submitButton)
     }
     
     func constrainWelcomeLabel(){
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            welcomeLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            welcomeLabel.topAnchor.constraint(equalTo: self.topAnchor),
+            welcomeLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            welcomeLabel.topAnchor.constraint(equalTo: self.view.topAnchor),
             welcomeLabel.heightAnchor.constraint(equalToConstant: 50),
-            welcomeLabel.widthAnchor.constraint(equalTo: self.widthAnchor)
+            welcomeLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor)
         ])
     }
     
@@ -98,8 +98,8 @@ class NewTripEntry: UIView {
         newlocationLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             newlocationLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 30),
-            newlocationLabel.centerXAnchor.constraint(equalTo: self.centerXAnchor),
-            newlocationLabel.centerYAnchor.constraint(equalTo: self.centerYAnchor)
+            newlocationLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            newlocationLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
         ])
     }
     

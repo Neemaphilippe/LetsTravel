@@ -36,14 +36,7 @@ class BeforeTravelVC: UIViewController {
     
     lazy var addNewTripButton: UIBarButtonItem = {
         let addBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addNewTripButtonPressed))
-        
-        //        button.setImage(UIImage(named: "add"), for: .normal)
-        //        button.setTitle("", for: .normal)
-        //        button.setTitleColor(.white, for: .normal)
-        //        button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
-        //        button.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
-        //        button.layer.cornerRadius = 5
-        //        button.isEnabled = false
+    
         return addBarButton
         
     }()
@@ -68,9 +61,7 @@ class BeforeTravelVC: UIViewController {
     }
     
     @objc func addNewTripButtonPressed() {
-        print("hi")
-        //action alert- want to add a new trip?
-        //segue to view 
+        
     }
     
     private func addViews(){
