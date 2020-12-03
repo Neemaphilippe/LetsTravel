@@ -120,8 +120,8 @@ class NewTripEntryVC: UIViewController {
     
     @objc private func handleSubmitButtonPressed() {
         guard self.newLocationText.text != "" else {
-            let alertVC = UIAlertController(title: "YOU FUCKED UP BITCH", message: nil, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: "sry papi", style: .default, handler: nil))
+            let alertVC = UIAlertController(title: "Please enter all information", message: nil, preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
             self.present(alertVC, animated: true, completion: nil)
             return
         }
