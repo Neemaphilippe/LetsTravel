@@ -12,11 +12,20 @@ class NewTripEntryVC: UIViewController {
     
     //MARK: UI Objects
     
+    lazy var contentStackView: UIStackView = {
+        let sv = UIStackView()
+        sv.axis = .vertical
+        sv.spacing = 50
+        sv.alignment = .center
+        sv.distribution = .equalSpacing
+        return sv
+    }()
+    
     lazy var welcomeLabel: UILabel = {
         let label = UILabel()
         label.font = UIFont(name: "Times New Roman", size: 30)
         label.text = "Enter New Trip"
-        label.textAlignment = .left
+        label.textAlignment = .center
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         label.backgroundColor = .clear
@@ -27,9 +36,9 @@ class NewTripEntryVC: UIViewController {
         let label = UILabel()
         label.font = UIFont(name: "Times New Roman", size: 20)
         label.text = "Where to next?"
-        label.textAlignment = .left
+//        label.textAlignment = .left
         label.numberOfLines = 0
-        label.sizeToFit()
+//        label.sizeToFit()
         return label
     }()
     
@@ -40,7 +49,6 @@ class NewTripEntryVC: UIViewController {
         tf.backgroundColor = .white
         tf.borderStyle = .bezel
         tf.autocorrectionType = .no
-        tf.isSecureTextEntry = true
         return tf
     }()
     
@@ -57,7 +65,7 @@ class NewTripEntryVC: UIViewController {
     lazy var newDatePicker: UIDatePicker = {
         let date = UIDatePicker()
         date.timeZone = NSTimeZone.local
-        date.backgroundColor = UIColor.black
+        date.backgroundColor = UIColor.green
         return date
     }()
     
@@ -69,6 +77,7 @@ class NewTripEntryVC: UIViewController {
         button.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         button.layer.cornerRadius = 5
         button.isEnabled = false
+        button.addTarget(self, action: #selector(submitButtonPressed), for: .touchUpInside)
         return button
     }()
     
@@ -77,11 +86,12 @@ class NewTripEntryVC: UIViewController {
     
     func addViews(){
         self.view.addSubview(welcomeLabel)
-        self.view.addSubview(newlocationLabel)
-        self.view.addSubview(newLocationText)
-//        self.view.addSubview(newDateLabel)
-//        self.view.addSubview(newDatePicker)
-//        self.view.addSubview(submitButton)
+        self.view.addSubview(contentStackView)
+        self.contentStackView.addArrangedSubview(newlocationLabel)
+        self.contentStackView.addArrangedSubview(newLocationText)
+        self.contentStackView.addArrangedSubview(newDateLabel)
+        self.contentStackView.addArrangedSubview(newDatePicker)
+        self.view.addSubview(submitButton)
     }
     
     func constrainWelcomeLabel(){
@@ -98,7 +108,7 @@ class NewTripEntryVC: UIViewController {
     func constrainNewLocationLabel(){
         newlocationLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            newlocationLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 30),
+            newlocationLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 10),
             newlocationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
 //            newlocationLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             newlocationLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
@@ -122,19 +132,50 @@ class NewTripEntryVC: UIViewController {
         self.view.backgroundColor = .white
         addViews()
         constrainWelcomeLabel()
-        constrainNewLocationLabel()
-        constrainNewLocationText()
+        constrainStackView()
+//        constrainNewLocationLabel()
+//        constrainNewLocationText()
+//        constrainDatePicker()
+       
+    }
+//
+//    func constrainNewDateLabel(){
+//        newDateLabel.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            newDateLabel.topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>)
+//        ])
+//
+//
+//
+//    }
+    
+    @objc func submitButtonPressed(){
+        if self.newlocationLabel.text != "" {
+            print("It's getting saved!")
+        }
     }
     
-    func constrainNewDateLabel(){
-        newDateLabel.translatesAutoresizingMaskIntoConstraints = false
+    func constrainDatePicker(){
+        newDatePicker.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            newDateLabel.topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>)
+//            newDatePicker.leadingAnchor.constraint(equalTo: newLocationText.leadingAnchor),
+            newDatePicker.trailingAnchor.constraint(equalTo: newLocationText.trailingAnchor),
+            newDatePicker.topAnchor.constraint(equalTo: newLocationText.bottomAnchor, constant: 10),
+            newDatePicker.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor, constant: -30)
+//            newDatePicker.widthAnchor.constraint(equalTo: newLocationText.widthAnchor)
+        
         ])
-        
-        
-        
     }
     
+    func constrainStackView(){
+        contentStackView.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            contentStackView.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor),
+            contentStackView.leadingAnchor.constraint(equalTo: self.view.leadingAnchor, constant: 30),
+            contentStackView.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30),
+            contentStackView.bottomAnchor.constraint(equalTo: view.safeAreaLayoutGuide.bottomAnchor)
+        
+        ])
+    }
 
 }
