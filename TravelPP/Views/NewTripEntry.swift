@@ -43,6 +43,16 @@ class NewTripEntry: UIView {
         return tf
     }()
     
+    lazy var newDateLabel: UILabel = {
+        let label = UILabel()
+        label.font = UIFont(name: "Times New Roman", size: 20)
+        label.text = "Select Departure Date"
+        label.textAlignment = .left
+        label.numberOfLines = 0
+        label.adjustsFontSizeToFitWidth = true
+        return label
+    }()
+    
     lazy var newDatePicker: UIDatePicker = {
         let date = UIDatePicker()
         date.frame = CGRect(x: 10, y: 50, width: self.frame.width, height: 200)
@@ -58,6 +68,7 @@ class NewTripEntry: UIView {
         self.addSubview(welcomeLabel)
         self.addSubview(newlocationLabel)
         self.addSubview(newLocationText)
+        self.addSubview(newDateLabel)
         self.addSubview(newDatePicker)
     }
     
@@ -80,16 +91,31 @@ class NewTripEntry: UIView {
         ])
     }
     
-//    func constrainNewLocationText(){
-//        newLocationText.translatesAutoresizingMaskIntoConstraints = false
+    func constrainNewLocationText(){
+        newLocationText.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            newLocationText.leadingAnchor.constraint(equalTo: newlocationLabel.trailingAnchor, constant: 10),
+            newLocationText.heightAnchor.constraint(equalTo: newlocationLabel.heightAnchor)
+        ])
+        
+    }
+    
+//    func constrainNewDateLabel(){
+//        newDateLabel.translatesAutoresizingMaskIntoConstraints = false
 //        NSLayoutConstraint.activate([
-//            newLocationText.leadingAnchor.constraint(equalTo: newlocationLabel.trailingAnchor, constant: 10),
-//            newLocationText.trailingAnchor.constraint(equalTo: newlocationLabel.trailingAnchor)
+//            newDateLabel.topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>)
 //        ])
-//        
-//    }
-//    
+        
+        
+        
+    }
+    
 //    func constrainDatePicker(){
-//        
+//        newDatePicker.translatesAutoresizingMaskIntoConstraints = false
+//        NSLayoutConstraint.activate([
+//            newDatePicker.topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>)
+//
+//        ])
+//
 //    }
 }
