@@ -61,6 +61,17 @@ class NewTripEntry: UIView {
         return date
     }()
     
+    lazy var submitButton: UIButton = {
+        let button = UIButton()
+        button.setTitle("Submit Entry", for: .normal)
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
+        button.backgroundColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
+        button.layer.cornerRadius = 5
+        button.isEnabled = false
+        return button
+    }()
+    
     
     //MARK: Functions
     
@@ -70,6 +81,7 @@ class NewTripEntry: UIView {
         self.addSubview(newLocationText)
         self.addSubview(newDateLabel)
         self.addSubview(newDatePicker)
+        self.addSubview(submitButton)
     }
     
     func constrainWelcomeLabel(){
@@ -110,12 +122,5 @@ class NewTripEntry: UIView {
         
     }
     
-//    func constrainDatePicker(){
-//        newDatePicker.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            newDatePicker.topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>)
-//
-//        ])
-//
-//    }
-}
+
+
