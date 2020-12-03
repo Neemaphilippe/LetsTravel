@@ -69,7 +69,8 @@ class BeforeTravelVC: UIViewController {
     
     @objc func addNewTripButtonPressed() {
         print("hi")
-        //action alert and segue to view
+        //action alert- want to add a new trip?
+        //segue to view 
     }
     
     private func addViews(){
