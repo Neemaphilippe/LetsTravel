@@ -11,19 +11,19 @@ import Foundation
 let traveljson = """
 [
   {
-    "location": "New York",
+    "locationName": "New York",
 "departureDate": "12/20/20",
 "currentDate": "12/03/20"
   }, {
- "location": "Colorado",
+ "locationName": "Colorado",
 "departureDate": "01/20/21",
 "currentDate": "12/03/20"
 }, {
- "location": "Paris",
+ "locationName": "Paris",
 "departureDate": "06/08/21",
 "currentDate": "12/03/10"
 }, {
- "location": "Tokyo",
+ "locationName": "Tokyo",
 "departureDate": "10/20/21",
 "currentDate": "12/03/20"
 }
@@ -32,7 +32,7 @@ let traveljson = """
 
 
 struct TravelInfo: Decodable {
-    let location: String
+    let locationName: String
     let departureDate: String
     let currentDate: String
     

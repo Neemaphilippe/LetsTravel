@@ -81,13 +81,13 @@ extension BeforeTravelVC: UICollectionViewDelegate, UICollectionViewDataSource{
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         guard let cell = beforeTravelCV.dequeueReusableCell(withReuseIdentifier: cellReuseIdentifier, for: indexPath) as? BeforeTravelCell else {return UICollectionViewCell()}
-        let singleLocation = locations[indexPath.row]
-       
-//        let singleCountdown = countdowns[indexPath.row]
+        let location = locations[indexPath.row]
+        let locationName = location.locationName
+        let singleCountdown = countdowns[indexPath.row]
         //put this into a struct
-        cell.upcomingTripsLabel.text = "Upcoming Trip: " + singleLocation.location
-//        cell.locationImageView.image = UIImage(named: singleLocation)
-//        cell.countdownLabel.text = "Time left until trip: " + singleCountdown
+        cell.upcomingTripsLabel.text = "Upcoming Trip: " + locationName
+        cell.locationImageView.image = UIImage(named: locationName)
+        cell.countdownLabel.text = "Time left until trip: " + singleCountdown
         return cell
 
     }

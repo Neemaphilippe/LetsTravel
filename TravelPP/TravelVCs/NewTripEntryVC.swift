@@ -133,7 +133,7 @@ class NewTripEntryVC: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.view.backgroundColor = .white
+        self.view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
         addViews()
         constrainWelcomeLabel()
         constrainStackView()
