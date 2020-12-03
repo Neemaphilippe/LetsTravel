@@ -61,7 +61,8 @@ class BeforeTravelVC: UIViewController {
     }
     
     @objc func addNewTripButtonPressed() {
-        
+        let newTrip = NewTripEntryVC()
+        self.navigationController?.pushViewController(newTrip, animated: true)
     }
     
     private func addViews(){

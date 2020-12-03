@@ -14,11 +14,12 @@ class NewTripEntryVC: UIViewController {
     
     lazy var welcomeLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Times New Roman", size: 40)
+        label.font = UIFont(name: "Times New Roman", size: 30)
         label.text = "Enter New Trip"
         label.textAlignment = .left
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
+        label.backgroundColor = .clear
         return label
     }()
     
@@ -28,7 +29,7 @@ class NewTripEntryVC: UIViewController {
         label.text = "Where to next?"
         label.textAlignment = .left
         label.numberOfLines = 0
-        label.adjustsFontSizeToFitWidth = true
+        label.sizeToFit()
         return label
     }()
     
@@ -55,7 +56,6 @@ class NewTripEntryVC: UIViewController {
     
     lazy var newDatePicker: UIDatePicker = {
         let date = UIDatePicker()
-        date.frame = CGRect(x: 10, y: 50, width: self.view.frame.width, height: 200)
         date.timeZone = NSTimeZone.local
         date.backgroundColor = UIColor.black
         return date
@@ -79,16 +79,17 @@ class NewTripEntryVC: UIViewController {
         self.view.addSubview(welcomeLabel)
         self.view.addSubview(newlocationLabel)
         self.view.addSubview(newLocationText)
-        self.view.addSubview(newDateLabel)
-        self.view.addSubview(newDatePicker)
-        self.view.addSubview(submitButton)
+//        self.view.addSubview(newDateLabel)
+//        self.view.addSubview(newDatePicker)
+//        self.view.addSubview(submitButton)
     }
     
     func constrainWelcomeLabel(){
         welcomeLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             welcomeLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
-            welcomeLabel.topAnchor.constraint(equalTo: self.view.topAnchor),
+//            welcomeLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor),
+            welcomeLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor),
             welcomeLabel.heightAnchor.constraint(equalToConstant: 50),
             welcomeLabel.widthAnchor.constraint(equalTo: self.view.widthAnchor)
         ])
@@ -98,7 +99,8 @@ class NewTripEntryVC: UIViewController {
         newlocationLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
             newlocationLabel.topAnchor.constraint(equalTo: welcomeLabel.bottomAnchor, constant: 30),
-            newlocationLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
+            newlocationLabel.leadingAnchor.constraint(equalTo: view.leadingAnchor, constant: 30),
+//            newlocationLabel.centerXAnchor.constraint(equalTo: self.view.centerXAnchor),
             newlocationLabel.centerYAnchor.constraint(equalTo: self.view.centerYAnchor)
         ])
     }
@@ -106,21 +108,33 @@ class NewTripEntryVC: UIViewController {
     func constrainNewLocationText(){
         newLocationText.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            newLocationText.leadingAnchor.constraint(equalTo: newlocationLabel.trailingAnchor, constant: 10),
-            newLocationText.heightAnchor.constraint(equalTo: newlocationLabel.heightAnchor)
+            newLocationText.widthAnchor.constraint(equalToConstant: 150),
+            newLocationText.heightAnchor.constraint(equalToConstant: 40),
+            newLocationText.centerYAnchor.constraint(equalTo: newlocationLabel.centerYAnchor),
+            newLocationText.trailingAnchor.constraint(equalTo: self.view.trailingAnchor, constant: -30)
         ])
         
     }
     
-//    func constrainNewDateLabel(){
-//        newDateLabel.translatesAutoresizingMaskIntoConstraints = false
-//        NSLayoutConstraint.activate([
-//            newDateLabel.topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>)
-//        ])
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.view.backgroundColor = .white
+        addViews()
+        constrainWelcomeLabel()
+        constrainNewLocationLabel()
+        constrainNewLocationText()
+    }
+    
+    func constrainNewDateLabel(){
+        newDateLabel.translatesAutoresizingMaskIntoConstraints = false
+        NSLayoutConstraint.activate([
+            newDateLabel.topAnchor.constraint(equalTo: <#T##NSLayoutAnchor<NSLayoutYAxisAnchor>#>, constant: <#T##CGFloat#>)
+        ])
         
         
         
     }
     
 
-
+}
