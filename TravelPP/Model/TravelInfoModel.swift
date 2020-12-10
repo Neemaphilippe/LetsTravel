@@ -31,7 +31,7 @@ let traveljson = """
 """.data(using: .utf8)!
 
 
-struct TravelInfo: Decodable {
+struct TravelInfo: Codable {
     let locationName: String
     let departureDate: String
     let currentDate: String

@@ -39,6 +39,17 @@ struct PersistenceManager<T: Codable> {
         try serializedData.write(to: url, options: Data.WritingOptions.atomic)
     }
     
+    func replace(objects: [T]) throws { //Used for deletion
+            let serializedData = try PropertyListEncoder().encode(objects)
+            try serializedData.write(to: url, options: Data.WritingOptions.atomic)
+        }
+   
+    func update(updatedObject: T, indexToUpdate: Int) throws {
+        var elements = try getObjects()
+        elements[indexToUpdate] = updatedObject
+        try replace(objects: elements)
+    }
+    
     func deleteAllObjects() throws {
         let elements = [T]()
         let serializedData = try PropertyListEncoder().encode(elements)
