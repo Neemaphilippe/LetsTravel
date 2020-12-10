@@ -19,6 +19,7 @@
 		55870D4B23849738004465FA /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 55870D4A23849738004465FA /* Assets.xcassets */; };
 		55870D4E23849738004465FA /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 55870D4C23849738004465FA /* LaunchScreen.storyboard */; };
 		55870D5923849738004465FA /* TravelPPTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55870D5823849738004465FA /* TravelPPTests.swift */; };
+		55B79BEA2581B1B900A8BE5F /* PersistenceManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55B79BE92581B1B900A8BE5F /* PersistenceManager.swift */; };
 		55BDB2342540F08F00CB8F9A /* BTCellConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55BDB2332540F08F00CB8F9A /* BTCellConstraints.swift */; };
 		55E141BA253F9039001F6BF5 /* BeforeTravelVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E141B9253F9039001F6BF5 /* BeforeTravelVC.swift */; };
 		55E141BD253FA584001F6BF5 /* BeforeTravelConstraints.swift in Sources */ = {isa = PBXBuildFile; fileRef = 55E141BC253FA584001F6BF5 /* BeforeTravelConstraints.swift */; };
@@ -56,6 +57,7 @@
 		55870D5423849738004465FA /* TravelPPTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TravelPPTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		55870D5823849738004465FA /* TravelPPTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TravelPPTests.swift; sourceTree = "<group>"; };
 		55870D5A23849738004465FA /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		55B79BE92581B1B900A8BE5F /* PersistenceManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PersistenceManager.swift; sourceTree = "<group>"; };
 		55BDB2332540F08F00CB8F9A /* BTCellConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BTCellConstraints.swift; sourceTree = "<group>"; };
 		55E141B9253F9039001F6BF5 /* BeforeTravelVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTravelVC.swift; sourceTree = "<group>"; };
 		55E141BC253FA584001F6BF5 /* BeforeTravelConstraints.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BeforeTravelConstraints.swift; sourceTree = "<group>"; };
@@ -156,6 +158,7 @@
 				55870D4A23849738004465FA /* Assets.xcassets */,
 				55870D4C23849738004465FA /* LaunchScreen.storyboard */,
 				55870D4F23849738004465FA /* Info.plist */,
+				55B79BE82581AF7B00A8BE5F /* Persistence  */,
 			);
 			path = TravelPP;
 			sourceTree = "<group>";
@@ -167,6 +170,14 @@
 				55870D5A23849738004465FA /* Info.plist */,
 			);
 			path = TravelPPTests;
+			sourceTree = "<group>";
+		};
+		55B79BE82581AF7B00A8BE5F /* Persistence  */ = {
+			isa = PBXGroup;
+			children = (
+				55B79BE92581B1B900A8BE5F /* PersistenceManager.swift */,
+			);
+			path = "Persistence ";
 			sourceTree = "<group>";
 		};
 		55E141BB253FA564001F6BF5 /* Constraints */ = {
@@ -298,6 +309,7 @@
 				555B5629257589DC003B5CBB /* NewTripEntryVC.swift in Sources */,
 				55870D4223849733004465FA /* AppDelegate.swift in Sources */,
 				5502FD1923A0ADC80073087F /* LoginVC.swift in Sources */,
+				55B79BEA2581B1B900A8BE5F /* PersistenceManager.swift in Sources */,
 				5502FD1D23A0B52C0073087F /* TravelDayVC.swift in Sources */,
 				55E141BA253F9039001F6BF5 /* BeforeTravelVC.swift in Sources */,
 				5502FD1B23A0AFC50073087F /* CreateAccountVC.swift in Sources */,

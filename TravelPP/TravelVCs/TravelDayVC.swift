@@ -88,7 +88,7 @@ class TravelDayVC: UIViewController {
         button.setTitle("Check out things to do in this city!", for: .normal)
         button.setTitleColor(.black, for: .normal)
         button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
-        button.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
+        button.backgroundColor = #colorLiteral(red: 0.9724547267, green: 0.9954997897, blue: 1, alpha: 1)
         button.layer.cornerRadius = 5
         button.isEnabled = false
         return button
