@@ -119,16 +119,29 @@ class NewTripEntryVC: UIViewController {
     }
     
     @objc private func handleSubmitButtonPressed() {
-        guard self.newLocationText.text != "" else {
-            let alertVC = UIAlertController(title: "Please enter all information", message: nil, preferredStyle: .alert)
-            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alertVC, animated: true, completion: nil)
-            return
+        guard let location = newLocationText.text,
+            !location.isEmpty  else {
+                
+                let alertVC = UIAlertController(title: "Please enter all information", message: nil, preferredStyle: .alert)
+                alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alertVC, animated: true, completion: nil)
+                
+                return
+                
         }
         
-        //TODO: -- Make persistence happen
-        //            let newTravelInfo = TravelInfo(location: self.newLocationText.text, departureDate: self.newDatePicker.date, currentDate: Date())
-        //            travelPersistenceManager.shared.save(newTravelInfo)
+        let newTravelInfo = TravelInfo(locationName: location, departureDate: newDatePicker.date, currentDate: Date())
+        do {
+            try TravelPersistenceHelper.manager.save(newEntry: newTravelInfo)
+        } catch {
+            let alertVC = UIAlertController(title: "Oops! Error saving destination", message: nil, preferredStyle: .alert)
+            alertVC.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+            self.present(alertVC, animated: true, completion: nil)
+        }
+        
+        
+        
+        
     }
     
     override func viewDidLoad() {

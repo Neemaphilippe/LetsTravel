@@ -33,8 +33,8 @@ let traveljson = """
 
 struct TravelInfo: Codable {
     let locationName: String
-    let departureDate: String
-    let currentDate: String
+    let departureDate: Date
+    let currentDate: Date
     
     
 }
