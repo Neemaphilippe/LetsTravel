@@ -15,14 +15,13 @@ class BeforeTravelCell: UICollectionViewCell {
     lazy var upcomingTripsLabel: UILabel = {
         let label = UILabel()
         label.text = "Upcoming Trips:"
-        label.font = UIFont(name: "Times New Roman", size: 40)
+        label.font = UIFont(name: "Times New Roman", size: 20)
         label.textAlignment = .left
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true
         label.textColor = #colorLiteral(red: 0.6000000238, green: 0.6000000238, blue: 0.6000000238, alpha: 1)
         label.backgroundColor = #colorLiteral(red: 0.7067151666, green: 0.8777987361, blue: 1, alpha: 1)
         return label
-        
     }()
     
     
@@ -36,7 +35,7 @@ class BeforeTravelCell: UICollectionViewCell {
     
     lazy var countdownLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Times New Roman", size: 50)
+        label.font = UIFont(name: "Times New Roman", size: 15)
         label.textAlignment = .left
         label.numberOfLines = 0
         label.adjustsFontSizeToFitWidth = true

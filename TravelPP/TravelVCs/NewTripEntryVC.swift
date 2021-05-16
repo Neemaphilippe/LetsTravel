@@ -127,7 +127,7 @@ class NewTripEntryVC: UIViewController {
                 self.present(alertVC, animated: true, completion: nil)
                 
                 return
-                
+                // some kind of check to make sure entry was submitted or segue to main cv
         }
         
         let newTravelInfo = TravelInfo(locationName: location, departureDate: newDatePicker.date, currentDate: Date())

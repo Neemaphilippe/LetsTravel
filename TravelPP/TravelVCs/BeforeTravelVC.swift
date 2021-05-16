@@ -36,19 +36,16 @@ class BeforeTravelVC: UIViewController {
     
     lazy var addNewTripButton: UIBarButtonItem = {
         let addBarButton = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.add, target: self, action: #selector(addNewTripButtonPressed))
-    
+        
         return addBarButton
         
     }()
     
     
     fileprivate func fetchTravelInfoData() {
-        do {
-            let data = try JSONDecoder().decode([TravelInfo].self, from: traveljson)
-            locations = data
-        } catch {
-            print(error)
-        }
+        let data = try! TravelPersistenceHelper.manager.getTravelDetails()
+        locations = data
+        
     }
     
     override func viewDidLoad(){
