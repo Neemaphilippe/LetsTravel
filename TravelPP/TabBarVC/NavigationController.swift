@@ -19,7 +19,7 @@ class NavigationController: UINavigationController {
     
 
     private func setUpNavBar(){
-        navigationBar.tintColor = .black
+        navigationBar.tintColor = .lightGray
         navigationBar.barTintColor = #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         let textAttributes = [
             NSAttributedString.Key.foregroundColor : UIColor.white,

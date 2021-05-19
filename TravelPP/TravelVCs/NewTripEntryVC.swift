@@ -8,8 +8,6 @@
 
 import UIKit
 
-import UIKit
-
 class NewTripEntryVC: UIViewController {
     
     //MARK: UI Objects
@@ -17,7 +15,7 @@ class NewTripEntryVC: UIViewController {
     lazy var contentStackView: UIStackView = {
         let sv = UIStackView()
         sv.axis = .vertical
-        sv.spacing = 50
+        sv.spacing = 30
         sv.alignment = .center
         sv.distribution = .equalSpacing
         return sv
@@ -25,7 +23,7 @@ class NewTripEntryVC: UIViewController {
     
     lazy var welcomeLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Times New Roman", size: 30)
+        label.font = UIFont(name: "Times New Roman", size: 20)
         label.text = "Enter New Trip"
         label.textAlignment = .center
         label.numberOfLines = 0
@@ -36,7 +34,7 @@ class NewTripEntryVC: UIViewController {
     
     lazy var newlocationLabel : UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Times New Roman", size: 20)
+        label.font = UIFont(name: "Times New Roman", size: 15)
         label.text = "Where to next?"
         label.numberOfLines = 0
         return label
@@ -51,7 +49,7 @@ class NewTripEntryVC: UIViewController {
     
     lazy var newDateLabel: UILabel = {
         let label = UILabel()
-        label.font = UIFont(name: "Times New Roman", size: 20)
+        label.font = UIFont(name: "Times New Roman", size: 15)
         label.text = "Select Departure Date"
         label.textAlignment = .left
         label.numberOfLines = 0
