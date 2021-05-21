@@ -77,6 +77,15 @@ class NewTripEntryVC: UIViewController {
     
     //MARK: Functions
     
+    func addAlert(){
+        let alert = UIAlertController(title: "Do you know if there are restrictions?", message: "It's recommended you check the CDC website for latest updates on COVID-19 before continuing.", preferredStyle: .alert)
+
+        alert.addAction(UIAlertAction(title: "Yes", style: .default, handler: nil))
+        alert.addAction(UIAlertAction(title: "No", style: .cancel, handler: nil))
+
+        self.present(alert, animated: true)
+    }
+    
     func addViews(){
         self.view.addSubview(welcomeLabel)
         self.view.addSubview(contentStackView)
@@ -146,6 +155,7 @@ class NewTripEntryVC: UIViewController {
         super.viewDidLoad()
         self.view.backgroundColor = #colorLiteral(red: 0.900858283, green: 0.900858283, blue: 0.900858283, alpha: 1)
         addViews()
+        addAlert()
         constrainWelcomeLabel()
         constrainStackView()
         constrainSubmitButton()

@@ -16,7 +16,7 @@ class TravelDayVC: UIViewController {
         let label = UILabel()
         label.numberOfLines = 0
         label.text = "Used airport parking? Enter information below."
-        label.font = UIFont(name: "Times New Roman", size: 18)
+        label.font = UIFont(name: "Times New Roman", size: 15)
         label.textColor = .black
         label.backgroundColor =  #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         label.textAlignment = .left
@@ -38,7 +38,7 @@ class TravelDayVC: UIViewController {
         let label = UILabel()
         label.numberOfLines = 0
         label.text = "Upload Boarding Pass:"
-        label.font = UIFont(name: "Times New Roman", size: 18)
+        label.font = UIFont(name: "Times New Roman", size: 15)
         label.textColor = .black
         label.backgroundColor =  #colorLiteral(red: 0.599193275, green: 0.7987571359, blue: 0.9307624698, alpha: 1)
         label.textAlignment = .left
@@ -63,7 +63,7 @@ class TravelDayVC: UIViewController {
         let button = UIButton()
         button.setTitle("Add Pass", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
+        button.titleLabel?.font = UIFont(name: "Times New Roman", size: 14)
         button.backgroundColor = #colorLiteral(red: 0.9724547267, green: 0.9954997897, blue: 1, alpha: 1)
         button.layer.cornerRadius = 5
         button.addTarget(self, action: #selector(boardingPassButtonPressed), for: .touchUpInside)
@@ -75,7 +75,7 @@ class TravelDayVC: UIViewController {
            let button = UIButton()
            button.setTitle("Add Reminder", for: .normal)
            button.setTitleColor(.black, for: .normal)
-           button.titleLabel?.font = UIFont(name: "Times New Roman", size: 16)
+           button.titleLabel?.font = UIFont(name: "Times New Roman", size: 14)
            button.backgroundColor = #colorLiteral(red: 0.9724547267, green: 0.9954997897, blue: 1, alpha: 1)
            button.layer.cornerRadius = 5
            button.addTarget(self, action: #selector(newReminderButtonPressed), for: .touchUpInside)
@@ -111,7 +111,7 @@ class TravelDayVC: UIViewController {
     private func setUpParkingLabel(){
         parkingLabel.translatesAutoresizingMaskIntoConstraints = false
         NSLayoutConstraint.activate([
-            parkingLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 50),
+            parkingLabel.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor, constant: 30),
             parkingLabel.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor, constant: 30),
             parkingLabel.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor, constant: -30)])
     }
